@@ -1,0 +1,2 @@
+# Scrapy_ElasticSearch_Django
+毕设项目:基于Scrapy+ElasticSearch+Django的小型全文搜索引擎
