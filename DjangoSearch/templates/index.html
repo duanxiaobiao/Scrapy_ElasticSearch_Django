@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+<meta charset="UTF-8">
+<title>段振彪的搜索页</title>
+<link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+<!--图标库-->
+<link rel='stylesheet' href='/static/css/all.css'>
+<!--主要样式-->
+<link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div><h2 style="text-align: center;margin-bottom: 60px;">段振彪的搜索引擎</h2></div>
+        <div class="input-group">
+            <input type="text" id="keyword" placeholder="Search..." autocomplete="off" style="height: 60px">
+            <label for="keyword" style="cursor: pointer" onclick="search()" ><i class="fas fa-search" id="search_button"></i></label>
+        </div>
+        <div class="suggestion-list hidden" id="suggestion-list">
+        </div>
+
+        <div id="apps">
+            <span>我的搜索：</span>
+
+        </div>
+    </div>
+
+    <script src="/static/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/static/layui/layui.js" type="text/javascript"></script>
+    <script src="/static/js/config.js" type="text/javascript"></script>
+    <script  src="/static/js/index.js" type="text/javascript"></script>
+</body>
+</html>

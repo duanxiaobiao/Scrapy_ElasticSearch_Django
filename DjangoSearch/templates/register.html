@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<title>注册</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/dmaku.css" />
+    <style type="text/css">
+        .btn_tab_login{float: right; margin-top: 48px;}
+        .btn_tab_login li{display: inline-block; margin-left:30px; font-size: 14px;}
+        .btn_tab_login li.cur a{color:#d00;}
+        #weixin_login_container iframe{
+            width:158px;
+            height:158px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+
+    </div>
+
+    <div class="login-wrap">
+        <div class="wrap clearfix">
+
+            <div class="form-box fr loginV2"  style="display:block;">
+                <ul class="form-tab clearfix">
+                    <li class="tab-li"><a href="javascript:;" tjjj="passport.login_type.wixin_qrcode">微信注册<i class="icon"></i></a></li>
+                    <li class="tab-li cur"><a href="javascript:;" tjjj="passport.login_type.login_name">账号注册</a></li>
+                </ul>
+                <div class="form-con">
+                    <div class="weixin-login" style="display:none;">
+                        <div class="wx-box clearfix">
+                            <a href="javascript:;" class="wx-img-box">
+                                <img class="wx-qrCode" src="/static/images/qrcode-logo.png" id="qrCodeImg">
+                                <img class="wx-qrCode-logo" src="/static/images/qrcode-logo.png" id="qrCodeLogo">
+                                <img class="statusImg" src="/static/images/wx-confirm.png" id="statusImg">
+                                <div id="weixin_login_container" style="display:none;"></div>
+                            </a>
+                            <img src="/static/images/wx-image.png" class="wx-image">
+                        </div>
+                        <p class="wx-text">微信扫一扫  快速注册</p>
+                        <p class="wx-help"><a href="javascript:;" class="help-a">如何使用？</a></p>
+                    </div>
+                    <div class="login-normal" style="display:block;">
+
+
+                        <div class="form-error" style=""><i></i><label class="text"></label></div>
+                        <dl class="clearfix">
+                            <dt>账户名：</dt>
+                            <dd><input type="text" name="loginName" id="normalUser" class="input-text" autocomplete="off" /><span class="placeholder">用户名/邮箱/手机号</span></dd>
+                        </dl>
+                        <dl class="top1 clearfix">
+                            <dt>密<em></em>码：</dt>
+                            <dd><input type="password" name="password" id="normalPassword" class="input-text"><span class="placeholder">请输入密码</span></dd>
+                        </dl>
+                        <dl class="clearfix">
+                            <dt>手机号：</dt>
+                            <dd><input name="mobile" type="text" id="partnerPhone" autocomplete="off" class="input-text mobile" maxlength="11" onblur="mobileCheck();"><span class="placeholder">请输入手机号</span></dd>
+                        </dl>
+                        <dl class="top2 clearfix">
+                            <dt>校验码：</dt>
+                            <dd>
+                                <input name="code" type="text" id="partnerJym" class="input-jym" maxlength="6" autocomplete="off" />
+                                <a  style="position: absolute;right: 104px" id="time_decrease"></a>
+                                <a id="smsSendButton" href="javascript:sendSms(this);" class="span-jym disabled" tjjj="passport.send.msg">发送短信校验码</a>
+                            </dd>
+                        </dl>
+
+                        <div class="btn-box clearfix" style="margin-top: 10px;">
+                            <input id="normalSubmit" class="btn-settlement" type=submit value="注    册"  tjjj="passport.button.login" onclick="nameLoginCheck()">
+
+                        </div>
+                        <div class="link-box clearfix">
+                            <a href="javascript:;" class="register" tjjj="passport.login.fstreg">返回登录</a>
+                            <a href="javascript:;" class="forget-pass" tjjj="passport.forget.password">忘记密码？</a>
+                        </div>
+
+
+                        <div class="login-short clearfix">
+                           <div class="short-left">
+                                <h3>使用合作账号注册：</h3>
+                                <ul class="clearfix">
+                                    <li class="qq"><a a href="javascript:;" tjjj="passport.login.thd.login.qq"></a></li>
+                                    <li class="sina"><a href="javascript:;" tjjj="passport.login.thd.login.sina"></a></li>
+                                    <li class="weixin"><a href="javascript:;" tjjj="passport.login.thd.login.weixin"></a></li>
+                                </ul>
+                            </div>
+                           <div class="short-right">
+                                <h3>您还可以选择：</h3>
+                                <p class="phone-short clearfix">
+                                    <i class="phone"></i>
+                                    <a href="javascript:;" tjjj="" class="txt phoneLogin">手机快捷注册</a>
+                                </p>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- -快捷登录 -->
+                <div class="form-box fr shortLogin" style="display:none;">
+                    <h5 class="title">快捷注册</h5>
+                     <div class="form-con">
+                        <form id="mobileLoginForm" method="post" onsubmit="return mobileLoginCheck();">
+                            <div class="form-error" style=""><i></i><label class="text"></label></div>
+                            <dl class="clearfix">
+                                <dt>手机号：</dt>
+                                <dd><input name="mobile" type="text" id="partnerPhone" autocomplete="off" class="input-text mobile" maxlength="11" onblur="mobileCheck();"><span class="placeholder">请输入手机号</span></dd>
+                            </dl>
+                            <dl class="top1 clearfix">
+                                <dt>验证码：</dt>
+                                <dd>
+                                    <input name="smsCaptcha" type="text" id="partnerYzm" class="input-yzm" onblur="captchCheck(this);" maxlength="4" autocomplete="off"/>
+                                    <span class="span-yzm">
+                                        <img id="smsCaptchaImage" src="/static/images/code.jpg" title="点击图片刷新校验码" alt="点击图片刷新校验码" onclick="changeCode('smsCaptchaImage','partnerYzm');"/>
+                                        <a href="javascript:changeCode('smsCaptchaImage','partnerYzm');" class="forget-pass">换一张</a>
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="top2 clearfix">
+                                <dt>校验码：</dt>
+                                <dd>
+                                    <input name="code" type="text" id="partnerJym" class="input-jym" maxlength="6" autocomplete="off"/>
+                                    <a id="smsSendButton" href="javascript:sendSms(this);" class="span-jym disabled" tjjj="passport.send.msg">发送短信校验码</a>
+                                </dd>
+                            </dl>
+                            <div class="form-remember">
+
+                                <input name="rememberName" type="checkbox" id="remUser" class="rem-check" style="display:none;" checked="checked">
+                                <span class="rem-box rem-box-r"><input name="rememberMe" type="checkbox" id="remLogin" class="rem-check">三个月之内免登录</span>
+                            </div>
+                            <div class="btn-box clearfix">
+                                <input id="partnerSubmit" class="btn-settlement" type="submit" value="注    册" tjjj="passport.quick.button.login">
+
+                            </div>
+                            <div class="link-box clearfix">
+                                 <a href="javascript:;" class="backLogin">返回账号登录>></a>
+                            </div>
+                        </form>
+                        </div>
+                </div>
+
+        </div>
+    </div>
+
+
+    <div id="jia_footer">
+        <div class="jia_foot_info">
+            <div class="jia_foot_con">
+                <p class="jia_foot_link">
+                    <a href="http://www.sucainiu.com" rel="nofollow" target="_blank">关于我们</a><span class="jia_split">|</span> <a href="http://www.sucainiu.com" target="_blank" rel="nofollow">联系我们</a><span class="jia_split">|</span> <a href="http://www.sucainiu.com" target="_blank" rel="nofollow">媒体报道</a><span class="jia_split">|</span> <a href="http://www.sucainiu.com" target="_blank" rel="nofollow">法律声明</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" rel="nofollow">企业文化</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" rel="nofollow">友情链接</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" rel="nofollow">加盟齐家</a><span class="jia_split">|</span> <a href="javascript:;" tjjj="sjrz.2" target="_blank" rel="nofollow">入驻齐家</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" rel="nofollow">诚聘英才</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank">网站地图</a><span class="jia_split">|</span> <a href="javascript:;" rel="nofollow" target="_blank">手机齐家</a><span class="jia_split">|</span> <a href="http://www.sucainiu.com" target="_blank" rel="nofollow">代码库钱包</a><span class="jia_split">|</span> <a href="javascript:void(0)" tjjj="bottom.link.help">帮助中心</a><span class="jia_split">|</span> <a href="javascript:;" class="jia_foot_open">更多<i></i></a>
+                </p>
+                <p class="jia_foot_link footnone">
+                    <a href="http://www.sucainiu.com" target="_blank" tjjj="footer.bottom.1">找装修公司</a><span class="jia_split">|</span> <a href="javascript:void(0);" target="_blank" tjjj="footer.bottom.2">买建材家居</a><span class="jia_split">|</span> <a href="http://tg.jia.com/" target="_blank" tjjj="footer.bottom.3">齐家团购</a><span class="jia_split">|</span> <a href="javascript:;/baike/" target="_blank" tjjj="footer.bottom.4">家居百科</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" tjjj="footer.bottom.5">装修公司库</a><span class="jia_split">|</span> <a href="javascript:;/product/" target="_blank" tjjj="footer.bottom.7">产品信息库</a><span class="jia_split">|</span> <a href="javascript:;" target="_blank" tjjj="footer.bottom.9">装修知识</a><span class="jia_split">|</span> <a href="javascript:;" tjjj="2014.foot.allcate">商品分类</a><span class="jia_split">|</span> <a href="javascript:;" tjjj="2014.foot.mallshangpin">所有商品</a><span class="jia_split">|</span> <a href="javascript:;" tjjj="2014.foot.dianpu">店铺大全</a><span class="jia_split">|</span><a href="javascript:void(0)" target="_blank" tjjj="footer.bottom.8">品牌库</a>
+                </p>
+            </div>
+            <p>
+                代码库 版权所有Copyright ? 2005-2016 www.sucainiu.com All rights reserved
+            </p>
+            <p>
+                沪ICP备xxxxxx号 沪B2-xxxx 组织机构代码证：xxxxx—1
+            </p>
+            <p>
+                中国互联网协会信用评价中心网信认证 网信编码:xxxxxx1
+            </p>
+
+            <p>
+                <a href="javascript:;">
+                    <img src="/static/images/gov-inco.jpg" border="0" width="40" height="44">
+                </a>
+                <a href="javascript:;/315/" target="_blank" style="margin-left:15px;">
+                    <img src="/static/images/315.gif" border="0">
+                </a>
+                <a style="margin-left:15px;" target="_blank" href="javascript:;">
+                    <img border="0" src="/static/images/jb.jpg">
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="/static/layui/layui.js"></script>
+<script src="/static/layui/layui.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+<script type="text/javascript">
+
+// 后台的URL
+var tarpitHost = window.globalConfig.api;
+function nameLoginCheck(){
+	var loginName = $("#normalUser").val().replace(/^\s+|\s+$/g, "");
+	var password = $("#normalPassword").val().replace(/^\s+|\s+$/g, "");
+    var telphone = $("#partnerPhone").val().replace(/^\s+|\s+$/g, "");
+
+	if(loginName == ""){
+		showError("请输入用户名");
+		return false;
+	} else if(password == ""){
+		showError("请输入密码");
+		return false;
+	}else if(!mobileCheck()){
+	    showError("输入的手机格式不正确");
+		return false;
+    }else{
+	    var message_code = $('#partnerJym').val().replace(/^\s+|\s+$/g, "");
+        if(message_code == ""){
+           showError("请先输入校验码");
+           return false ;
+        }else{
+            dataFprm = new FormData();
+            dataFprm.append("loginName",loginName);
+            dataFprm.append("password",password);
+            dataFprm.append("telphone",telphone);
+            dataFprm.append("message_code",message_code);
+            $.ajax({
+                // ajax
+                url: tarpitHost+"/api/register/",
+                type: "POST",
+                data:dataFprm,
+                async: false,
+                contentType: false,
+                dataType: 'json',
+                processData: false,   // jQuery不要去处理发送的数据
+                success: function (json) {
+                    if(json.status == 200){
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg("注册成功! 2秒后自动跳到登录页面")
+                        });
+                        setTimeout(function () {
+                            window.location.href ='/login/';
+                        },2000);
+
+ 1                   }else{
+                        layui.use('layer', function () {
+                            var layer = layui.layer;
+                            layer.msg("注册失败,请检查原因.")
+                        });
+                    }
+                }
+
+            })
+        }
+    }
+
+}
+
+//手机登陆验证
+function mobileLoginCheck(){
+	var mobile = $("#mobileLoginForm").find("#partnerPhone").eq(0).val();
+	var captch = $("#mobileLoginForm").find("#partnerYzm").eq(0).val();
+	var code = $("#mobileLoginForm").find("#partnerJym").eq(0).val();
+	if(mobile == null || mobile == '' || !(_mobile_reg).test(mobile)){
+		showError("请填写正确的手机号");
+		return false;
+	}
+	if(captch == null || captch == "" || captch == undefined){
+		showError("请填写验证码");
+		return false;
+	}
+	if(code == null || code == ""){
+		showError("请填写校验码");
+		return false;
+	}
+	return true;
+}
+
+function mobileCheck(){
+	 var re = /^1[345678]\d{9}$/; //校验手机号
+    if($('#partnerPhone').val().replace(/^\s+|\s+$/g, "") == ""){
+
+    }
+    else if(re.test($('#partnerPhone').val()))
+    {
+        $('#smsSendButton').attr('disable',false)
+        return true;
+    }
+    else
+    {
+        showError("输入的手机格式不正确");
+        document.getElementById('smsSendButton').disabled = true;
+        return false;
+    }
+
+}
+//发送短信
+function sendSms(obj){
+    if($('#partnerPhone').val().replace(/^\s+|\s+$/g, "") == "" ){
+        showError("请填写正确的手机号");
+        return false;
+    } else if(!mobileCheck()){
+        return false;
+    }
+	$.get(tarpitHost+'/api/send_message/', {mobile:$('#partnerPhone').val()}, function(msg) {
+        var msg = JSON.parse(msg)
+        if(msg.status===200){
+            {#RemainTime();#}
+             layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.msg("短信验证码发送成功,请注意查收");
+            });
+            setInterval(time_decreases,1000)
+        }else{
+
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.msg("短信验证码发送失败,请重新尝试");
+            });
+            $('#time_decrease').html('');
+        }
+    });
+
+}
+
+function captchCheck(obj){
+	if(!(_mobile_reg).test($("#partnerPhone").val())){
+		showError("请填写正确的手机号");
+		return;
+	}
+	var captch = $(obj).val();
+	if(captch == '' || captch == null){
+		showError("请填写验证码");
+	}else{
+		checkCaptch(captch,
+					function(){
+						if(!$("#smsSendButton").hasClass("sending")){
+						 	$("#smsSendButton").removeClass("disabled");
+						}
+						 closeError();
+					},function(){
+						showError("验证码错误");
+						 $("#smsSendButton").addClass("disabled");
+					}
+		);
+	}
+}
+$(function(){
+	$(".form-tab li").on("click",function(){
+		var index = $(this).index();
+		$(this).addClass("cur").siblings().removeClass("cur");
+		$(".form-con>div").hide().eq(index).show();
+		if(index == 0){
+            $(".form-foot").hide();
+        }else{
+            $(".form-foot").show();
+            //www.sucainiu.com 代码库
+        }
+		$(".form-error").hide();
+	});
+	$(".weixin-login .help-a").hover(
+		function(){
+			$(".wx-img-box,.wx-image").stop();
+			$(this).parents(".weixin-login").find(".wx-img-box").animate({"marginLeft":"15px"},300,function(){
+				$(this).parents(".weixin-login").find(".wx-image").animate({"opacity":1},300);
+			});
+		},
+		function(){
+			$(".wx-img-box,.wx-image").stop();
+			$(this).parents(".weixin-login").find(".wx-image").stop().animate({"opacity":0},300,function(){
+				$(this).parents(".weixin-login").find(".wx-img-box").animate({"marginLeft":"110px"},300);
+			});
+		}
+	);
+
+
+});
+
+$('.jia_foot_open').click(function(){
+    $('.footnone').slideToggle();
+    $(this).find('i').toggleClass('footnow');
+});
+$('.phoneLogin').click(function(){
+    $('.loginV2').hide();
+    $('.shortLogin').show();
+    $('.form-error').hide();
+});
+$('.backLogin').click(function(){
+	 $('.login-normal').show();
+    $('.loginV2').show();
+    $('.shortLogin').hide();
+    $('.form-error').hide();
+});
+//开启错误提示
+function showError(error){
+	$(".form-error").find("label").html(error);
+	$(".form-error").show();
+}
+
+var start_time = 60
+function time_decreases() {
+    if(start_time >=0){
+        document.getElementById("time_decrease").innerText=start_time.toString()+'s';
+    }else {
+        location.href="/register/";
+    }
+    start_time--;
+}
+
+
+
+</script>

@@ -1,0 +1,446 @@
+@charset "utf-8";
+html { color: #333;}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td { margin: 0; padding: 0}
+body,button,input,select,textarea { font: 12px/1.5 tahoma,arial,'微软雅黑'; color: #666 }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: 400 }
+address,cite,dfn,em,var,caption,strong,th,i,code,kbd,pre,samp { font-style: normal; font-weight: 400}
+ul,ol { list-style: none}
+sub,sup { position: relative; font-size: 75%; line-height: 0; vertical-align: baseline }
+sup { top: -0.5em}
+sub { bottom: -0.25em }
+input,button,textarea,fieldset,img { border: 0 none }
+button,input,select,textarea { font-size: 100%; vertical-align: middle; font-family: inherit}
+textarea { overflow: auto; vertical-align: top}
+table { border-collapse: collapse; border-spacing: 0 }
+th { text-align: inherit}
+caption,th { text-align: center}
+a { text-decoration: none; color: #666}
+a:hover { text-decoration: none; color: #d00 }
+.clearfix:before,.clearfix:after { display: table; content: ''}
+.clearfix:after { clear: both}
+.clearfix { *zoom:1}
+q:before,q:after { content: ""}
+.clear { clear: both}
+iframe { display: block }
+abbr,acronym { border: 0 none; font-variant: normal}
+del { text-decoration: line-through}
+.fl { float: left}
+.fr { float: right}
+.fc { clear: both}
+.fz { zoom:1}
+img { border: none 0 }
+input { _border: none; outline: none}
+a {color: #666;}
+a:hover {color: #dd0000;}
+/*header*/
+#header{ background:#fff; height:84px; padding:0;}
+#header .wrap{ position:relative; width:1190px; height:84px; margin:0 auto;}
+#header .logo_jia{ position:absolute; top:2px; left:0; width:300px; height:80px;}
+#header .title{ position:absolute; left:238px; bottom:20px; line-height:1; font-size:24px; color:#333; font-family:"Microsoft YaHei",sans-serif;}
+
+/*login*/
+.login-wrap{ width:100%; height:565px;    background: #36AABD;}
+.login-wrap .wrap{ width:960px; height:480px; padding:0 115px; margin:0 auto;}
+
+/*login左侧banner图*/
+.J_slide_wrap{width:580px;height:480px;position: relative;overflow: hidden;}
+.J_slide_wrap li {float:left;}
+.J_slide_wrap ul{position: absolute;left:0;top:0;height:100%;}
+.J_slide_wrap ul li{width:580px;height:480px;position: absolute;opacity: 0;filter:alpha(opacity:0);}
+.J_slide_wrap ul li:first-child{opacity: 1;filter:alpha(opacity:100);}
+.J_slide_wrap li img{ width:100%; height:100%;}
+.J_slide_wrap ol {position: absolute;width:100%;height:9px;bottom:8px;text-align: center;font-size: 0;}
+.J_slide_wrap ol li {width:9px;height:9px;border-radius: 50%;background:#fff;margin-right: 8px;display:inline-block;float: none;}
+.J_slide_wrap ol li.cur {background:#d00;}
+.J_slide_wrap>span {position: absolute;top:50%;width:40px;height:70px; margin-top:-35px;background: url(../images/slide_btn_bg.png) left top no-repeat;display: none;cursor: pointer;}
+.B_prev_btn {left:0;}
+.B_prev_btn:hover {background-position: -40px 0;}
+.J_slide_wrap .B_next_btn {right:0;background-position: -40px -70px;}
+.J_slide_wrap .B_next_btn:hover {background-position: left bottom;}
+
+/*login右侧登录框*/
+.login-wrap .form-box{ width:400px; min-height:410px; _height:410px; margin-top:35px; background:#fff;}
+.form-box .form-tab{ width:400px; height:52px; border-bottom:1px solid #ddd; font-family:"Microsoft YaHei";}
+.form-tab .tab-li{ float:left; width:50%; height:50px; border-bottom:2px solid #fff;}
+.form-tab .tab-li a{ position:relative; display:block; text-align:center; height:50px; line-height:52px; font-size:18px; color:#999; text-decoration:none;}
+.form-tab .tab-li.cur{ border-bottom-color:#d00;}
+.form-tab .tab-li.cur a{ color:#d00;}
+.form-tab .tab-li .icon{ position:absolute; top:10px; width:18px; height:14px; margin-left:6px; background:url(../images/new.png) 0 0 no-repeat;}
+
+.form-box .form-con{ width:434px; height:345px; padding:38px 28px 0;}
+.form-box .weixin-login{ width:380px; padding-top:50px;}
+.login-add .form-con{ height:342px; padding-top:41px;}
+.form-box .login-normal,.form-box .login-partner{ display:none;position:relative; width:354px; padding:0 40px;}
+.form-box .form-error{ display:none; position:absolute; top:-32px;max-height: 32px; padding:4px 6px 4px 12px; border:1px solid #ffddbc; background:#fffceb;}
+.form-box .form-error i{ position:absolute; top:4px; left:12px; width:16px; height:16px;background: url(../images/member.png) -124px 0 no-repeat;}
+.form-box .form-error .text{display:block;max-width: 258px; padding-left:22px; line-height:16px; font-family:"Microsoft YaHei"; color:#666;/*  white-space:nowrap;background:url(../images/member.png) -124px 0 no-repeat; */ }
+.form-box dl{ position:relative; width:350px; height:20px; line-height:20px; padding:16px 0; border:1px solid #ddd; font-family:"Microsoft YaHei"; font-size:14px;}
+.login-add dl{padding:14px 0;}
+.form-box .error{ z-index:5; border-color:#f66;}
+.form-box .top1{ top:-1px;}
+.form-box .top2{ top:-2px;}
+.form-box .top3{ top:-3px;}
+.form-box dt{ float:left; width:60px; height:20px; line-height:20px; padding-left:20px;}
+.form-box dt em{ padding:0 7px;}
+.form-box dd{ position:relative; float:left; width:270px; height:20px; line-height:20px;}
+.form-box .placeholder{ position:absolute; height:20px; line-height:20px; left:10px; z-index:1; color:#ccc;}
+.form-box .input-text,.form-box .input-yzm,.form-box .input-jym{ position:absolute; height:20px; line-height:20px; padding:0 10px; left:0; z-index:2; background:transparent; outline:0 none; color:#333;}
+.form-box .input-text{width:250px;}
+.form-box .input-yzm{width:83px;}
+.form-box .input-jym{width:90px;}
+.form-box .span-yzm{ position:absolute; top:-16px; right:0; width:162px; height:36px; line-height:36px; padding:8px 0; border-left:1px solid #ddd;}
+.login-add .span-yzm{ top:-14px; padding:6px 0;}
+.form-box .error .span-yzm{ border-left-color:#d00;}
+.form-box .span-yzm img{ height:36px; width:88px; margin:0 13px; vertical-align:top;}
+.form-box .span-jym{ position:absolute; top:-8px; right:-18px; width:108px; height:34px; line-height:34px; text-align:center; color:#f33; font-size:12px; border:1px solid #d66; border-radius:5px; text-decoration:none;}
+.form-box .disabled{ border-color:#ccc; color:#999;}
+.form-box .tips{ display:none; position:absolute;left:100%; top:50%; width:auto; height:22px; line-height:22px; padding:10px 12px; margin-top:-22px; border:1px solid #ffddbc; background:#fffceb; white-space:nowrap;}
+.form-box .tips em{ position:absolute; top:-1px; left:-10px; width:11px; height:10px; background:url(../images/member.png) 0 0 no-repeat;}
+.form-box .tips i{ display:inline-block; width:24px; height:24px; background:url(../images/member.png) -11px 0 no-repeat; vertical-align:top;}
+.form-box .error .tips{display:block;}
+.form-box .tips span{ display:inline-block; margin-left:8px;}
+.form-box .form-remember{ padding:18px 0 24px;}
+.login-add .form-remember{ padding:12px 0 18px;}
+.form-box .login-partner .form-remember{ padding:12px 0 18px;}
+.form-remember .rem-box{ display:inline-block; height:13px; line-height:13px; padding-left:20px; background:url(../images/rem-check.png) 0 0 no-repeat; cursor:default; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none;}
+.form-remember .memCheck{ background-position:0 -13px;}
+.form-remember .rem-check{ display:none; height:13px; width:13px;}
+.form-remember .rem-box-r{ margin-left:0px;}
+.form-box .btn-box{ height:46px;}
+.login-add .btn-box{ height:40px;}
+.form-box .login-partner .btn-box{ height:40px;}
+.btn-settlement{ float:left; display:inline-block; height:40px; line-height:40px; width:100%; text-align:center; font-size:16px; color:#fff; -webkit-border-radius:5px; -o-border-radius:5px; -ms-border-radius:5px; border-radius:5px;background-color:#d00; outline:0 none; font-family:"Microsoft YaHei"; cursor:pointer;}
+.btn-settlement:hover{ background-color:#e00;}
+.form-box .btn-box .btn-settlement{ width:270px;}
+.form-box .forget-pass{ color:#007fd7;}
+.form-box .forget-pass:hover{ color:#d00;}
+.form-box .btn-box .forget-pass{ float:right; width:72px; margin-left:10px; line-height:40px; font-family:"Microsoft YaHei";}
+.form-box .login-short{ margin-top:18px; border-top:1px dotted #ddd;}
+.login-short h3{ font-size:12px; line-height:1; padding:17px 0 13px; color:#666;}
+.login-short li{ float:left; height:33px; width:33px; margin-right:18px; background:url(../images/member.png) -13px -24px no-repeat;}
+.login-short li a{ display:block; height:33px;}
+.login-short .qq{ background-position:-13px -24px;}
+.login-short .sina{ background-position:-49px -24px;}
+.login-short .weixin{ position:relative; background-position:-85px -24px;}
+.login-short .renren{ background-position:-121px -24px;}
+.login-short .baidu{ background-position:-79px -57px;}
+.login-short .qr-code{ display:none; position:absolute; left:50%; top:100%; width:104px; height:104px; padding:8px; margin:8px 0 0 -60px; border:1px solid #ccc; background:#fff;}
+.login-short .qr-code em,.login-short .qr-code i{ position:absolute; left:50%; top:-14px; width:0; height:0; margin-left:-6px; border-width:7px 6px; border-style:dashed dashed solid dashed; border-color:transparent transparent #ccc transparent;}
+.login-short .qr-code i{top:-13px; border-color:transparent transparent #fff transparent;}
+.login-short .qr-code img{ width:104px; height:104px;}
+.login-short .hover .qr-code{ display:block;}
+
+.form-box .form-foot{ width:482px; height:52px; padding:4px;}
+.form-box .form-foot_p{ height:52px; line-height:52px;text-align:center; background:url(../images/form-footbg.png); font-family:"Microsoft YaHei";}
+.form-foot_p .spanb{ font-size:16px;}
+.form-foot_p label{ margin-left:5px; color:#d00;}
+.form-foot_p .spans{ font-size:12px;}
+.form-dl-jym{ display:none;}
+/*register*/
+.register-wrap{ width:100%; height:480px; background:#fff url(../images/registerBg.jpg) center center no-repeat; color:#333; font-family:"Microsoft YaHei";}
+.register-wrap .wrap{ width:1176px; height:466px; padding:7px; margin:0 auto; background:#e5e5e5; background:rgba(0,0,0,.1);}
+.register-wrap .registerBox{ width:1176px; height:466px; background:#fff;}
+.registerBox .register-h1{ width:350px; height:38px; line-height:38px; padding:35px 0 25px; font-size:18px; text-align:center;}
+.registerBox .register-left{ position:relative; width:584px; height:466px; margin-left:234px; border-right:1px solid #ddd;}
+.register-left .form-error{ top:68px; left:0;}
+.register-left dl{width:348px;}
+.register-left dt{ width:77px;}
+.register-left dd{ width:251px;}
+.register-left .input-text{ width:251px; padding:0;}
+.register-left .btn-box .btn-settlement{ width:350px;}
+.register-left .input-yzm{width:86px; padding:0;}
+.register-left .correct{ display:none; position:absolute; right:10px; top:50%; height:24px; width:24px; margin-top:-12px; background:url(../images/member.png) -35px 0 no-repeat;}
+/*.register-left .link-box{height:38px; line-height:38px; text-align:right; font-size:14px; color:#666;}*/
+.register-left .link-btn{ margin-left:12px;}
+.register-left .link-btn:link,.register-left .link-btn:visited{ color:#007fd7;}
+.register-left .link-btn:hover,.register-left .link-btn:active{ color:#d00;}
+.registerBox .register-right{ width:357px;}
+.register-right .link-box{ width:220px; margin:0 auto; padding:35px 0 13px; line-height:36px; font-size:14px; color:#666; text-align:center; border-bottom:1px dotted #ddd;}
+.register-right .right-p{ line-height:1; text-align:center; color:#666; margin-top:26px; font-size:14px;}
+.register-right .right-p .forget-pass{ margin-left:12px;}
+.register-right .login-short{ width:220px; margin:0 auto; margin-top:33px;}
+.register-right .login-short h3{ padding:19px 0 17px; font-size:14px; text-align:center;}
+.register-right .login-short ul{ text-align:center;}
+.register-right .login-short li{ float:none; display:inline-block; margin-right:8px;}
+.register-left .placeholder{ left:0;}
+.register-right .h3{height:60px; margin-top:13px; font-size:16px; color:#333; text-align:center;}
+.register-right .wx-text{line-height:30px;}
+.register-right .wx-text em{display:block; padding:15px 0; line-height:30px;}
+.register-right .wx-text b{font-weight:bold;}
+.register-right .qrcode-box{ position:relative;}
+.register-right .wx-img-box{ position:relative; z-index:2; display:block; width:158px; height:158px; margin:0 auto; border:1px solid #eee;}
+.register-right .wx-img-box .wx-qrCode{ display:block; width:158px; height:158px;}
+.register-right .wx-img-box .wx-qrCode-logo{ position:absolute;z-index:3; top:50%; left:50%; width:40px; height:40px; margin-left:-20px; margin-top:-20px;}
+.register-right .wx-img-box .statusImg{ display:none; position:absolute;z-index:4; top:0; left:0; width:158px; height:158px;}
+
+/*register-phone*/
+
+.register-phone{ width:100%; height:542px; background:#fff; color:#333; font-family:"Microsoft YaHei";}
+.register-phone .wrap{ width:1070px; height:423px; padding:7px; margin:0 auto; background:#e5e5e5; background:rgba(0,0,0,.1);}
+.register-phone .regPhoneBox{ width:954px; height:381px; padding:21px 58px; background:#fff;}
+.register-step{ width:1070px; height:90px; margin:17px auto 0;}
+.register-step .register-jd{position:relative; padding:26px 70px 10px; width:930px; height:4px;}
+.register-step .jd-over,.register-step .jd-none{ width:50%; height:4px; float:left;}
+.register-step .jd-over{ background:#fcc;}
+.register-step .jd-none{ background:#eee;}
+.register-step .step1,.register-step .step2,.register-step .step3{ position:absolute; top:17px; width:70px; height:47px; text-align:center;}
+.register-step .step1{ left:35px;}
+.register-step .step2{ left:50%; margin-left:-35px;}
+.register-step .step3{ right:35px;}
+.register-step .over i,.register-step .none i{ display:inline-block; width:23px; height:23px; background:url(../images/member.png) -59px 0 no-repeat; vertical-align:top;}
+.register-step .none i{ background-position:-82px 0;}
+.register-step .over h3,.register-step .none h3{ color:#666; font-size:14px;}
+.register-step .none h3{ color:#ccc;}
+.regPhoneBox .register-h1{height:38px; line-height:38px; border-bottom:1px solid #d6d6d6; font-size:20px;}
+.regPhoneBox .register-h1 em{ font-size:14px; color:#999; margin-left:12px;}
+.regPhoneBox .register-center{ position:relative; width:350px; margin:40px auto 0;}
+.register-center .h1-error{ display:none; height:16px; padding:6px 6px 6px 12px;margin-bottom:15px; border:1px solid #ffddbc; background:#fffceb;}
+.register-center .h1-error .text{display:block; padding-left:22px; line-height:16px; font-family:"Microsoft YaHei"; color:#666; white-space:nowrap; background:url(../images/member.png) -124px 0 no-repeat;}
+.regPhoneBox .btn-box .btn-settlement{ width:350px; margin-top:22px;}
+.regPhoneBox dl{ width:348px;}
+.regPhoneBox .center-h2{ text-align:center; height:20px; line-height:20px; padding:4px; margin-bottom:15px; border:1px solid #c4e3ff; background:#edf8ff;}
+.regPhoneBox .center-h2 i{ display:inline-block; height:19px; width:19px; margin-right:8px; background:url(../images/member.png) -105px 0 no-repeat; vertical-align:top;}
+.regPhoneBox dd{ width:268px;}
+.regPhoneBox dt.note{ width:85px;}
+.regPhoneBox dd.note{ width:243px;}
+.regPhoneBox dl.unabled{ background:#eee;}
+.regPhoneBox dl.unabled .span-jym{ border-color:#ccc; color:#999;}
+
+/*test-phone*/
+.test-Phone{ width:100%; height:255px; margin-bottom:100px; background:#fff; color:#333; font-family:"Microsoft YaHei";}
+.test-Phone .wrap{ width:1085px; height:241px; padding:7px; margin:17px auto 0; background:#e5e5e5; background:rgba(0,0,0,.1);}
+.test-Phone .testPhoneBox{ width:765px; height:178px; padding:63px 0 0 320px; background:#fff;}
+.testPhoneBox .test-over{ width:53px; height:53px; background:url(../images/member.png) 0 -57px no-repeat;}
+.testPhoneBox .testPhone-div{ margin-left:27px;}
+.testPhoneBox .test-h3{ margin-bottom:16px; font-size:20px; color:#333; line-height:24px;}
+.testPhoneBox .test-p{ color:#666; line-height:22px; font-size:14px;}
+.testPhoneBox .test-p em{ color:#d00;}
+.testPhoneBox .btn-span{ display:block; margin-top:25px; height:30px; line-height:30px;}
+.testPhoneBox .btn-span .btn-a,.testPhoneBox .btn-span .link-a{ float:left;}
+.testPhoneBox .btn-span .btn-a{ width:100px; height:28px; border:1px solid #999; margin-right:16px; text-align:center; border-radius:5px;}
+.testPhoneBox .btn-span .btn-a:hover{ border-color:#f66; color:#f66; text-decoration:none;}
+.testPhoneBox .btn-span .link-a{ color:#007fd7;}
+.testPhoneBox .btn-span .link-a:hover{ color:#d00;}
+
+
+/*QQ Phone*/
+.QQ-phone{ width:100%; height:566px; margin-bottom:30px; background:#f7f7f7; color:#333; font-family:"Microsoft YaHei";}
+.QQ-phone .wrap{ width:1022px; margin:0 auto; padding:0 84px;}
+.QQ-phone .QQPhone-h1{ margin:36px 0 33px; font-size:16px; color:#666; text-align:center; line-height:22px;}
+.QQ-phone .QQPhone-h1 .em{ color:#d00;}
+.QQ-phone .QQPhoneBox.regPhoneBox{ width:1022px; height:auto; background:transparent; padding:0;}
+.QQPhoneBox .QQPhone-left{ float:left; width:417px; height:404px; padding:7px 14px; border:1px solid #ddd; background:#fff;}
+.QQPhoneBox .QQPhone-arrow{ float:left; width:126px; height:420px; background:url(../images/QQPhone-bg.png) center center no-repeat;}
+.QQPhoneBox .QQPhone-right{ float:right; width:349px; height:322px; padding:48px; border:1px solid #ddd; background:#fff;}
+.QQPhoneBox .QQPhone-h2{ font-size:14px; color:#666; line-height:16px; text-align:right;}
+.QQPhoneBox .register-center{margin-top:55px;}
+.QQPhoneBox .QQPhone-left-h3{ height:20px; line-height:20px; padding:11px 0; border-bottom:1px solid #ddd; font-size:20px;}
+.QQPhoneBox .QQPhone-left-h3 i{ display:inline-block; width:20px; height:20px; margin:0 10px 0 6px; background:url(../images/member.png) -59px -57px no-repeat; vertical-align:top;}
+.QQPhoneBox .img-box{position:relative; width:134px; height:134px; margin:85px auto 0; background:url(../images/img-boxbg.png);}
+.QQPhoneBox .img-box img{ position:absolute; top:11px; left:11px; width:100px; height:100px; border:6px solid #fff;}
+.QQPhoneBox .user-h6{ text-align:center; color:#666; font-size:16px; line-height:24px; padding-top:14px;}
+.QQPhoneBox .QQPhone-add{ position:relative;}
+/*foot*/
+.foot_info{margin:30px 0;text-align:center;line-height:24px; color:#999;}
+
+.weixin-login{ font-family:"Microsoft YaHei";}
+.weixin-login .wx-box{ position:relative;}
+.weixin-login .wx-img-box{ position:relative; z-index:2; float:left; width:158px; height:158px; margin-left:110px; border:1px solid #eee;}
+.weixin-login .wx-img-box .wx-qrCode{ display:block; width:158px; height:158px;}
+.weixin-login .wx-img-box .wx-qrCode-logo{ position:absolute;z-index:3; top:50%; left:50%; width:40px; height:40px; margin-left:-20px; margin-top:-20px;}
+.weixin-login .wx-img-box .statusImg{ display:none; position:absolute;z-index:4; top:0; left:0; width:158px; height:158px;}
+.weixin-login .wx-box .wx-image{ position:absolute; z-index:0; right:8px; top:0; width:175px; height:158px; filter:alpha(opacity=0); opacity:0;}
+.weixin-login .wx-text{ margin-top:22px; font-size:16px; line-height:28px; color:#333; text-align:center;}
+.weixin-login .wx-text b{ font-weight:bold;}
+.weixin-login .wx-help{ margin-top:14px; text-align:center;}
+.weixin-login .wx-help .help-a{ font-size:12px; text-decoration:none;}
+.weixin-login .wx-help .help-a:link,.weixin-login .wx-help .help-a:visited{ color:#666;}
+.weixin-login .wx-help .help-a:hover,.weixin-login .wx-help .help-a:active{color:#f00;}
+
+/*add-info*/
+.add-info .QQPhone-right{position:relative; padding-top:42px;}
+.add-info .btn-box{ margin-top:22px;}
+.add-info .btn-box .btn-settlement{ width:220px;}
+.add-info dl{ width:348px;}
+.add-info dt{ width:70px;}
+.add-info dd{ width:258px;}
+.add-info .center-h2{ margin-bottom:39px; text-align:center; line-height:24px; font-size:18px; color:#333;}
+.add-info .center-h2 i{ display:inline-block; height:24px; width:24px; margin-right:8px; background:url(../images/member.png) -35px 0 no-repeat; vertical-align:top;}
+.QQ-phone .QQPhoneBox.add-info{ width:1022px; height:auto; background:transparent; padding:0;}
+.add-info .link-a{ margin-left:28px; line-height:40px; font-size:14px;}
+.add-info .link-a:link,.add-info .link-a:visited{ color:#007fd7;}
+.add-info .link-a:hover,.add-info .link-a:active{ color:#d00;}
+.add-info .form-error{ top:auto; bottom:28px; left:48px;}
+
+#weixin_login_container{ position:absolute; left:0; right:0; bottom:0; top:0}
+
+/*other-bind*/
+.QQPhoneBox .otherBind-right{ float:right; width:349px; height:418px; padding:0 48px; border:1px solid #ddd; background:#fff;}
+.otherBind-right .form-tab{ width:349px;}
+.otherBind-right .form-tab .tab-li{ width:50%;}
+.otherBind-right .form-con{ width:349px; height:auto; padding:32px 0 0;}
+.otherBind-right .form-con .login-normal,.otherBind-right .form-con .login-partner{width:349px;padding:0;}
+.otherBind-right .btn-box .btn-settlement{ width:180px; margin:0;}
+.otherBind-right .forget-box{ height:18px; line-height:18px; padding:8px 0; text-align:right;}
+.otherBind-right .link-a:link,.otherBind-right .link-a:visited{ color:#007fd7; text-decoration:none;}
+.otherBind-right .link-a:hover,.otherBind-right .link-a:active{ color:#d00; text-decoration:underline;}
+.otherBind-right .skip{ float:right; line-height:40px; font-size:14px;}
+.form-box .code-msg dt{ width:90px;}
+.form-box .code-msg dd{ width:238px;}
+.otherBind-right .login-partner .btn-box{ padding-top:32px;}
+
+/*bind-phone*/
+.bind-phone{padding-top:60px;}
+.bind-phone dt{ color:#666;}
+.bind-phone dl.disabled .span-jym{ border-color:#ddd; color:#999;}
+
+/*unbind-phone-frame*/
+.unbind-phone-frame{width:480px;height:520px; background-color:#fff;}
+.unbind-phone-frame a:link,.unbind-phone-frame a:visited{ color:#007fd7;}
+.unbind-phone-frame a:hover,.unbind-phone-frame a:active{color:#f33;}
+.unbind-phone-frame .user-form{position:relative;width:350px;height:490px;padding:30px 65px 0;font-family:"Microsoft YaHei";}
+.unbind-phone-frame .title{ height:53px; line-height:53px; padding:0 0 15px 53px; background:url(../images/member.png) 0 -110px no-repeat; text-align:center; font-size:18px; color:#333;}
+.unbind-phone-frame .form-error{display:none;position:relative;padding:4px 6px 4px 12px;border:1px solid #ffddbc;background:#fffceb}
+.unbind-phone-frame .form-error .icon{ position:absolute; left:10px; top:4px; width:15px; height:15px;background:url(../images/member.png) -124px 0 no-repeat}
+.unbind-phone-frame .form-error .text{display:block;padding-left:22px;line-height:16px;font-family:"Microsoft YaHei";color:#666;}
+.unbind-phone-frame .h5{ color:#999; font-size:14px; line-height:34px;}
+.unbind-phone-frame dl{position:relative;width:348px;height:20px;line-height:20px;padding:14px 0;border:1px solid #ddd;font-family:"Microsoft YaHei";font-size:14px}
+.unbind-phone-frame .top1{top:-1px}
+.unbind-phone-frame .top2{top:-2px}
+.unbind-phone-frame dt{float:left;width:60px;height:20px;line-height:20px;padding-left:20px;color:#666;}
+.unbind-phone-frame dt em{padding:0 7px}
+.unbind-phone-frame dd{position:relative;float:left;width:268px;height:20px;line-height:20px}
+.unbind-phone-frame .input-text,.unbind-phone-frame .input-yzm,.unbind-phone-frame .input-jym{position:absolute;height:20px;line-height:20px;padding:0 10px;left:0;z-index:2;background:transparent;outline:0 none;color:#333}
+.unbind-phone-frame .input-text{width:250px}
+.unbind-phone-frame .input-yzm{width:83px}
+.unbind-phone-frame .input-jym{width:136px}
+.unbind-phone-frame .span-yzm{position:absolute;top:-14px;right:0;width:162px;height:36px;line-height:36px;padding:6px 0;border-left:1px solid #ddd}
+.unbind-phone-frame .error .span-yzm{border-left-color:#d00}
+.unbind-phone-frame .span-yzm img{height:36px;width:88px;margin:0 13px;vertical-align:top}
+.unbind-phone-frame .span-jym{position:absolute;top:-10px;right:6px;width:98px;height:38px;line-height:38px;text-align:center;color:#f33;font-size:12px;border:1px solid #f66;border-radius:5px;text-decoration:none}
+.unbind-phone-frame .disabled{border-color:#ccc;color:#999}
+.unbind-phone-frame .span-jym:link,.unbind-phone-frame .span-jym:visited{color:#f33;}
+.unbind-phone-frame .disabled:link,.unbind-phone-frame .disabled:visited{color:#999;}
+.unbind-phone-frame .btn-box{height:40px;margin-top:24px; margin-bottom:30px;}
+.unbind-phone-frame .btn-settlement{display:inline-block;height:40px;line-height:40px;width:100%;text-align:center;font-size:16px;color:#fff;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;background-color:#d00;outline:0 none;font-family:"Microsoft YaHei";cursor:pointer}
+.unbind-phone-frame .btn-settlement:hover{ background-color:#e00;}
+.unbind-phone-frame .user-short{border-top:1px dotted #ddd}
+.unbind-phone-frame .user-short h3{font-size:12px;line-height:1;padding:17px 0 13px;color:#666}
+.unbind-phone-frame .user-short li{float:left;height:33px;width:33px;margin-right:18px;background:url(../images/member.png) -13px -24px no-repeat}
+.unbind-phone-frame .user-short li a{display:block;height:33px}
+.unbind-phone-frame .user-short .qq{background-position:-13px -24px}
+.unbind-phone-frame .user-short .sina{background-position:-49px -24px}
+.unbind-phone-frame .user-short .weixin{position:relative;background-position:-85px -24px}
+.unbind-phone-frame .user-short .renren{background-position:-121px -24px}
+.unbind-phone-frame .user-short .baidu{ background-position:-79px -57px;}
+#userQrcodeBox{ display:none;}
+.unbind-phone-frame .h3{ padding-top:20px; font-size:18px; color:#333; text-align:center; line-height:70px;}
+.unbind-phone-frame .qrcode-box{ position:relative;}
+.unbind-phone-frame .wx-img-box{ position:relative; z-index:2; display:block; width:178px; height:178px; margin:0 auto; border:1px solid #eee;}
+.unbind-phone-frame .wx-img-box .wx-qrCode{ display:block; width:178px; height:178px;}
+.unbind-phone-frame .wx-img-box .wx-qrCode-logo{ position:absolute; top:50%; left:50%; width:40px; height:40px; margin-left:-20px; margin-top:-20px;}
+.unbind-phone-frame .wx-img-box .statusImg{ display:none; position:absolute; top:0; left:0; width:178px; height:178px;}
+.unbind-phone-frame .link-box{ padding:8px 0; text-align:right; font:12px/18px "\5B8B\4F53";}
+.unbind-phone-frame .back-btn:link,.unbind-phone-frame .back-btn:visited{ color:#007fd7; text-decoration:none;}
+.unbind-phone-frame .back-btn:hover,.unbind-phone-frame .back-btn:active{ color:#d00; text-decoration:underline;}
+.unbind-phone-frame .close{position:absolute;right:20px;top:20px;display:block;width:40px;height:40px;background:url(../images/close-1.png) center center no-repeat;cursor:pointer}
+.unbind-phone-frame .wx-text{ height:42px;}
+.unbind-phone-frame .wx-text .txt{ padding-top:5px; line-height:21px; font-size:16px; color:#333; text-align:center;}
+.unbind-phone-frame .wx-text  b{ display:block; font-weight:bold; text-align:center;}
+
+/*bind-phone-frame*/
+.bind-phone-frame{width:480px;height:520px; background-color:#fff;}
+.bind-phone-frame a:link,.bind-phone-frame a:visited{ color:#007fd7;}
+.bind-phone-frame a:hover,.bind-phone-frame a:active{color:#f33;}
+.bind-phone-frame .user-form{position:relative;width:350px;height:490px;padding:30px 65px 0;font-family:"Microsoft YaHei";}
+.bind-phone-frame .title{ height:53px; line-height:53px; padding:0 0 15px 53px; background:url(../images/member.png) 0 -110px no-repeat; text-align:center; font-size:18px; color:#333;}
+.bind-phone-frame .form-error{display:none;position:relative;padding:4px 6px 4px 12px;border:1px solid #ffddbc;background:#fffceb}
+.bind-phone-frame .form-error .icon{ position:absolute; left:10px; top:4px; width:15px; height:15px;background:url(../images/member.png) -124px 0 no-repeat}
+.bind-phone-frame .form-error .text{display:block;padding-left:22px;line-height:16px;font-family:"Microsoft YaHei";color:#666;}
+.bind-phone-frame .h5{ color:#999; font-size:14px; line-height:34px;}
+.bind-phone-frame dl{position:relative;width:348px;height:20px;line-height:20px;padding:14px 0;border:1px solid #ddd;font-family:"Microsoft YaHei";font-size:14px}
+.bind-phone-frame .top1{top:-1px}
+.bind-phone-frame .top2{top:-2px}
+.bind-phone-frame dt{float:left;width:60px;height:20px;line-height:20px;padding-left:20px;color:#666;}
+.bind-phone-frame dt em{padding:0 7px}
+.bind-phone-frame dd{position:relative;float:left;width:268px;height:20px;line-height:20px}
+.bind-phone-frame .input-text,.bind-phone-frame .input-yzm,.bind-phone-frame .input-jym{position:absolute;height:20px;line-height:20px;padding:0 10px;left:0;z-index:2;background:transparent;outline:0 none;color:#333}
+.bind-phone-frame .input-text{width:250px}
+.bind-phone-frame .input-yzm{width:83px}
+.bind-phone-frame .input-jym{width:136px}
+.bind-phone-frame .span-yzm{position:absolute;top:-14px;right:0;width:162px;height:36px;line-height:36px;padding:6px 0;border-left:1px solid #ddd}
+.bind-phone-frame .error .span-yzm{border-left-color:#d00}
+.bind-phone-frame .span-yzm img{height:36px;width:88px;margin:0 13px;vertical-align:top}
+.bind-phone-frame .span-jym{position:absolute;top:-10px;right:6px;width:98px;height:38px;line-height:38px;text-align:center;color:#f33;font-size:12px;border:1px solid #f66;border-radius:5px;text-decoration:none}
+.bind-phone-frame .disabled{border-color:#ccc;color:#999}
+.bind-phone-frame .span-jym:link,.bind-phone-frame .span-jym:visited{color:#f33;}
+.bind-phone-frame .disabled:link,.bind-phone-frame .disabled:visited{color:#999;}
+/* .bind-phone-frame .disabled:hover,.bind-phone-frame .disabled:active{color:#f33;border:1px solid #f66;} */
+.bind-phone-frame .btn-box{height:40px;margin-top:24px;}
+.bind-phone-frame .btn-settlement{display:inline-block;height:40px;line-height:40px;width:100%;text-align:center;font-size:16px;color:#fff;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px;border-radius:5px;background-color:#d00;outline:0 none;font-family:"Microsoft YaHei";cursor:pointer}
+.bind-phone-frame .user-short{margin-top:30px;border-top:1px dotted #ddd}
+.bind-phone-frame .user-short h3{font-size:12px;line-height:1;padding:17px 0 13px;color:#666}
+.bind-phone-frame .user-short li{float:left;height:33px;width:33px;margin-right:18px;background:url(../images/member.png) -13px -24px no-repeat}
+.bind-phone-frame .user-short li a{display:block;height:33px}
+.bind-phone-frame .user-short .qq{background-position:-13px -24px}
+.bind-phone-frame .user-short .sina{background-position:-49px -24px}
+.bind-phone-frame .user-short .weixin{position:relative;background-position:-85px -24px}
+.bind-phone-frame .user-short .renren{background-position:-121px -24px}
+.bind-phone-frame .user-short .baidu{ background-position:-79px -57px;}
+
+/* footer */
+#jia_footer { margin-top: 50px; padding-bottom: 20px; background-color:#fff}
+#jia_footer a { color: #999}
+#jia_footer p { text-align: center}
+#jia_footer a:hover { color: #d00}
+.jia_foot_info { text-align: center}
+.jia_foot_info .jia_foot_link { padding: 10px 0; text-align: center}
+#jia_footer .jia_foot_link { padding: 10px 0; text-align: center}
+#jia_footer .jia_foot_link .jia_split { color: #ddd }
+.jia_foot_info .jia_foot_link a { color: #333; padding: 0 15px}
+.jia_foot_info p { line-height: 24px; color: #aaa}
+.jia_foot_open i { display: inline-block; width: 9px;height: 6px; background: url(../images/jia_foot_icn.png) 0 -218px no-repeat; margin-left: 3px; position: relative; top: -1px}
+.jia_foot_open i.footnow { background-position: 0 -210px }
+.jia_foot_open:hover i { background-position: -11px -218px}
+.jia_foot_open:hover i.footnow { background-position: -11px -210px}
+.footnone { display: none; margin-top: -10px}
+#jia_footer .jia_foot_help dl.jia_other_map p { text-align: left;}
+#jia_footer .jia_foot_help dl { font-family: "微软雅黑";}
+
+
+/*20150925 modify*/
+.loginV2 .form-con{ width:400px; height:auto; padding:0;}
+.shortLogin .form-con{ position:relative; width:300px; height:auto; padding:52px 40px 0;}
+.loginV2 .login-normal,.loginV2 .login-partner{ width:327px; padding:40px 40px 0;}
+.loginV2 .form-error{ top:7px;}
+.shortLogin .form-error{ top:5px;}
+.loginV2 dl{width:325px; padding:12px 0;}
+.shortLogin dl{width:320px; padding:16px 0;}
+.loginV2 dd,.shortLogin dd{ width:218px;}
+.loginV2 .input-text,.shortLogin .input-text{width:208px;}
+.loginV2 .input-yzm,.shortLogin .input-yzm{width:50px;}
+.loginV2 .span-yzm{ top:-13px; width:150px; padding:5px 0;}
+.shortLogin .span-yzm{ width:150px;}
+.loginV2 .span-yzm img,.shortLogin .span-yzm img{ margin:0 5px 0 7px;}
+.loginV2 .form-remember{ padding:11px 0 17px;}
+.shortLogin .form-remember{ padding:9px 0 13px;}
+.loginV2 .btn-box,.shortLogin .btn-box{ height:40px;}
+.loginV2 .btn-box .btn-settlement,.shortLogin .btn-box .btn-settlement{ width:100%;}
+.loginV2 .forget-pass,.shortLogin .forget-pass{ color:#007fd7; font-size:12px;}
+.loginV2 .link-box .forget-pass,.loginV2 .link-box .register{ float:right; width:76px; line-height:34px; font-family:"Microsoft YaHei";}
+.loginV2 .link-box .register{ float:left; color:#007fd7;}
+.loginV2 .link-box .register:hover{ color:#d00;}
+.shortLogin .forgetPass,.shortLogin .backLogin{ float:left; line-height:38px; font-family:"Microsoft YaHei"; color:#007fd7;}
+.shortLogin .forgetPass:hover,.shortLogin .backLogin:hover{ color:#d00;}
+.shortLogin .backLogin{ float:right;}
+.loginV2 .login-short{ padding-top:18px; padding-bottom:12px; margin:0;}
+.loginV2 .short-left{ float:left; width:150px;}
+.loginV2 .short-right{ float:left; width:124px; padding-left:25px; border-left:1px dotted #ddd;}
+.loginV2 .login-short h3{ padding:0 0 12px 0;}
+.loginV2 .login-short .phone-short{ height:33px;}
+.loginV2 .login-short .phone-short .txt{ float:left; line-height:33px; font-size:14px; color:#666;}
+.loginV2 .login-short .phone-short .txt:hover{ color:#d00;}
+.loginV2 .login-short .phone-short .phone{ float:left; height:33px; width:33px; margin-right:7px; background:url(../images/member.png) -115px -57px no-repeat;}
+.loginV2 .login-short li{ margin-right:16px;}
+.shortLogin{ display:none;}
+.shortLogin .title{ height:40px; line-height:40px; padding-top:18px; font-size:18px; color:#d00; text-align:center;}

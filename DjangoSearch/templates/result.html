@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>段振彪的搜索引擎</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/result.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/paginations.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" id="navbar">
+        <div class="container-fluid" id="container-fluid">
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-header" style="margin-left: 12%">
+{#                    <a href="/result/"><img src="/static/images/陨石.SVG.png" style="width: 50px;float: left;height: 50px;cursor: pointer" id="mini"></a>#}
+                    <a class="navbar-brand" href="/" id="DZB">DZB搜索</a>
+                </div>
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="/" id="home">首页</a>
+                </div>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/result/" id="recommend">推荐</a>
+                </div>
+
+
+                <div class="navbar-form navbar-left">
+                    <div class="input-group">
+                        <input type="text" id="keyword" placeholder="Search..." autocomplete="off">
+                        <label for="keyword" style="cursor: pointer"  ><i class="glyphicon glyphicon-search" id="search_button"></i></label>
+                    </div>
+                    <div class="suggestion-list" id="suggestion-list">
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav nav-mini" >
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list"></i></a>
+                        <ul class="dropdown-menu" id="apt" >
+                            <li class='nav-item' data-toggle="modal" data-target="#hot_category_Modal">
+                                <a href='javascript:;'>
+                                    <i class='glyphicon glyphicon-list-alt' style="color: blue;"></i>
+                                    <span>热门分类</span>
+                                </a>
+                            </li>
+                            <li class='nav-item' id="bloger_list">
+                                <a href='javascript:;'>
+                                    <i class='glyphicon glyphicon-fire' style="color: red"></i>
+                                    <span>博主推荐</span>
+                                </a>
+                            </li>
+                            <li class='nav-item' id="data-from" data-toggle="modal" data-target="#data-form-Modal">
+                                <a href='javascript:;'>
+                                    <i class='glyphicon glyphicon-sunglasses'></i>
+                                    <span>数据来源</span>
+                                </a>
+
+                            </li>
+                            <li class='nav-item'>
+                                <a href='javascript:;'>
+                                    <i class='glyphicon glyphicon-briefcase' style=" color: #05c3ef;"></i>
+                                    <span>原创社区</span>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a href='javascript:;'>
+                                    <i class='glyphicon glyphicon-magnet' style="color: cornflowerblue;"></i>
+                                    <span>爬虫后台</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="user_role">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="user_role_a">
+                            <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="    width: 1.5em;
+    height: 1.5em;">
+                                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="person_center">
+                            <li><a href="/login/">登录</a></li>
+                            <li><a href="/register/">注册</a></li>
+                             <li><a href="#">个人中心</a></li>
+                            <li role="separator" class="divider"></li>
+{#                            <li onclick="loginout()" id="loginout"><a href="javascript:void(0);">退出</a></li>#}
+                        </ul>
+                    </li>
+{#                    <li class="dropdown">#}
+{#                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-option-vertical"></i></a>#}
+{#                        <ul class="dropdown-menu">#}
+{#                            <li><a href="#">sss个人中心</a></li>#}
+{#                            <li><a href="#">DDSASD</a></li>#}
+{#                            <li><a href="#">Something else here</a></li>#}
+{#                            <li role="separator" class="divider"></li>#}
+{#                            <li><a href="#">Separated link</a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container_left">
+
+    </div>
+    <div class="containers">
+        <div class="row" id="containers-row">
+
+            <div class="thumbnail">
+                <div class="layui-card" id="content-card">
+
+                </div>
+
+                <div class="page_split">
+                    <div class="page_split2">
+                        <ul class="pagination" id="page_split">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_right">
+        <div class="panel panel-default" id="panel-default_right">
+            <div class="panel-heading">Languages:</div>
+            <div class="panel-body " id="panel-body">
+                <p><a href="#">Java</a></p>
+                <p><a href="#">Python</a></p>
+                <p><a href="#">GO</a></p>
+                <p><a href="#">C</a></p>
+                <p><a href="#">C++</a></p>
+                <p><a href="#">Javascript</a></p>
+                <p><a href="#">PHP</a></p>
+            </div>
+        </div>
+
+        <div class="panel panel-default" id="my_search">
+            <div class="panel-heading">我的搜索</div>
+            <div class="panel-body " id="my-panel-body">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal fade" id="hot_category_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">热门分类</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="modal-table">
+                        <tr>
+                            <td>
+                                <a href="/result/?keyword=Java&cur_page=1"><img src="/static/images/java.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Java&cur_page=1"><p style="text-align: center;margin: 5px 0;">Java</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=Python&cur_page=1"><img src="/static/images/python.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Python&cur_page=1"><p style="text-align: center;margin: 5px 0;">Python</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=PHP&cur_page=1"><img src="/static/images/php.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=PHP&cur_page=1"><p style="text-align: center;margin: 5px 0;">PHP</p></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/result/?keyword=C/C++&cur_page=1"><img src="/static/images/C.jpg" style="width: 100px;height: 100px;margin: 0 40px;"></a>
+                                <a href="/result/?keyword=C/C++&cur_page=1"><p style="text-align: center;margin: 5px 0;">C/C++</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=Go&cur_page=1"><img src="/static/images/go.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Go&cur_page=1"><p style="text-align: center;margin: 5px 0;">Go</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=Javascript&cur_page=1"><img src="/static/images/javascript.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Javascript&cur_page=1"><p style="text-align: center;margin: 5px 0;">Javascript</p></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/result/?keyword=Swift&cur_page=1"><img src="/static/images/swift.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Swift&cur_page=1"><p style="text-align: center;margin: 5px 0;">Swift</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=C#&cur_page=1"><img src="/static/images/C%23.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=C#&cur_page=1"><p style="text-align: center;margin: 5px 0;">C#</p></a>
+                            </td>
+                            <td>
+                                <a href="/result/?keyword=Julia&cur_page=1"><img src="/static/images/julia.jpg" style="width: 100px;height: 100px;margin: 0 40px;border-radius: 50px;"></a>
+                                <a href="/result/?keyword=Julia&cur_page=1"><p style="text-align: center;margin: 5px 0;">Julia</p></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--数据来源模态框--->
+    <div class="modal fade" id="data-form-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">数据来源</h4>
+            </div>
+            <div class="modal-body" id="data-content">
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+    <script src="/static/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="/static/layui/layui.js" type="text/javascript"></script>
+    <script src="/static/js/pagination.js" type="text/javascript"></script>
+    <script src="/static/js/nav.js" type="text/javascript"></script>
+    <script src="/static/js/config.js" type="text/javascript"></script>
+    <script src="/static/js/result.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    background: url(/static/images/spider.jpg);
+    background-size: 100%;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 15px;
+  margin-top: 5%;
+}
+
+form {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 180px;
+    position: relative;
+}
+
+.input-group {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translatey(-50%);
+  color: rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+input {
+  width: 100%;
+  padding: 8px 30px 8px 12px;
+  border: 2px solid rgba(64, 1, 1, 0.98);
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.06);
+  color: #F27121;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 1px;
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-color: #F27121;
+}
+
+input:focus + label {
+  transform: scale(1.05) translatey(-50%);
+  color: #F27121;
+}
+
+#apps {
+  margin-top: 42px;
+  margin-left: 42px;
+}
+
+.app {
+    display: inline-block;
+    width: 20%;
+    margin: 0 1.2% 21px;
+    padding: 11px 6px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.app:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.app i {
+  font-size: 2.4em;
+  color: #fff;
+}
+
+.app p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  margin-top: 6px;
+  transition: 0.2s all ease;
+}
+#apps a{
+    margin-left: 10px;
+}
+.app:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.suggestion-list {
+    background-color: #fff;
+    border-radius: 0 0 6px 6px;
+    position: absolute;
+    width: 100%;
+    margin-top: 0px;
+    border: 2px solid #F27121;
+    border-top: none;
+}
+
+.suggestion-list.hidden {
+  display: none;
+  overflow: hidden; /*超过区域就隐藏*/
+  white-space: nowrap;/*规定段落中的文本不进行换行*/
+  text-overflow: ellipsis; /*显示省略符号来代表被修剪的文本。*/
+    max-width: 570px;
+}
+
+.suggestion-list .suggest-li {
+  line-height: 40px;
+  padding-left: 15px;
+}
+
+.suggestion-list i {
+  margin-right: 12px;
+  color: #F27121;
+}
+.suggest-li:hover{
+  background-color: gray;
+  cursor: pointer;
+  color: white;
+}
+.suggest-li a{
+  text-decoration: none;
+}
+.nav-top{
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.layui-layer-content{
+    height: 50px;
+}
